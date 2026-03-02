@@ -23,6 +23,18 @@ data = {
 }
 
 df = pd.DataFrame([data])
+import matplotlib.pyplot as plt
+
+st.write("### 📊 Weather Charts")
+
+fig, ax = plt.subplots()
+
+ax.bar(["Temperature", "Humidity", "Wind Speed"],
+       [data["Temperature (°C)"],
+        data["Humidity (%)"],
+        data["Wind Speed (kph)"]])
+
+st.pyplot(fig)
 
 # Dashboard UI
 st.set_page_config(page_title="Live Weather Dashboard", layout="wide")
@@ -37,5 +49,6 @@ col3.metric("Wind Speed", f"{data['Wind Speed (kph)']} kph")
 
 st.write("### Weather Details")
 st.dataframe(df)
+
 
 st.caption("Data updates automatically each time the page loads.")
