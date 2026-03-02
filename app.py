@@ -6,10 +6,13 @@ import requests
 API_KEY = "8411fe1ba3fb464686c42645260203"
 
 # City to fetch weather
-CITY = "Chennai"
+city = st.selectbox(
+    "Select City",
+    ["Chennai", "Mumbai", "Delhi", "Bangalore"]
+)
 
 # API request
-url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}&aqi=no"
+url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}&aqi=no"
 response = requests.get(url).json()
 
 # Extract data
@@ -52,3 +55,4 @@ st.dataframe(df)
 
 
 st.caption("Data updates automatically each time the page loads.")
+
