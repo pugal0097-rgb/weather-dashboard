@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 
 st.write("### 📊 Weather Charts")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(6,4))
 
 ax.bar(["Temperature", "Humidity", "Wind Speed"],
        [data["Temperature (°C)"],
@@ -55,4 +55,5 @@ st.dataframe(df)
 
 
 st.caption("Data updates automatically each time the page loads.")
+
 
