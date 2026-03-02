@@ -36,7 +36,7 @@ ax.bar(["Temperature", "Humidity", "Wind Speed"],
        [data["Temperature (°C)"],
         data["Humidity (%)"],
         data["Wind Speed (kph)"]])
-
+plt.tight_layout()
 st.pyplot(fig)
 
 # Dashboard UI
@@ -55,6 +55,7 @@ st.dataframe(df)
 
 
 st.caption("Data updates automatically each time the page loads.")
+
 
 
 
